@@ -1,0 +1,33 @@
+.page {
+    width: 80%;
+    border: 2px solid black;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-input {
+    width: 80%;
+    display: block;
+}
+
+.title-bar {
+    display: flex;
+    justify-content: center;
+    background-color: lightgrey ;
+}
+
+.personal-info-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
