@@ -3,8 +3,8 @@ import React, { Component } from 'react'
 class RemoveBtn extends Component {
     
     render() {
-        const {id, handleClick} = this.props;
-        const style = this.props.preview ? {display: 'none'} : null;
+        const {id, handleClick, previewMode} = this.props;
+        const style = previewMode ? {display: 'none'} : null;
         return (
             <button id={id}
              className='remove-button'

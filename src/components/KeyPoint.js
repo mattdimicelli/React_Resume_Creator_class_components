@@ -6,11 +6,12 @@ class KeyPoint extends Component {
     render() {
         const {previewMode, text, id, handleClickEdit,
         handleClickRemove} = this.props;
+        if (text === '') return null;
         return (
             <li>
                  {text}
                 <EditBtn
-                handleClick={handleClickEdit}
+                handleClick={(e) => handleClickEdit(e, id, text)}
                  previewMode={previewMode}
                   />
 

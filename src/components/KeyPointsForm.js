@@ -16,11 +16,11 @@ class KeyPointsForm extends Component {
     }
 
     render() {
-        const {handleSubmitKeyPointForm, previewMode, showKeyPointForm} = this.props;
+        const {handleSubmitKeyPointForm, previewMode, showKeyPointForm, id} = this.props;
         const {keyPointText} = this.state;
         const style = showKeyPointForm ? {} : {display: 'none'};
         return (
-            <form style={style} onSubmit={(e) => handleSubmitKeyPointForm(e, this.state.keyPointText)}>
+            <form style={style} onSubmit={(e) => handleSubmitKeyPointForm(e, this.state.keyPointText, id)}>
                 <TextInput
                  value={keyPointText}
                  placeholder='Key Point'

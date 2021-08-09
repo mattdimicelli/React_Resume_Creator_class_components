@@ -12,7 +12,6 @@ class Summary extends Component {
     state = {
         headline: '',
         hideDisplayShowForm: true,
-        showKeyPointForm: false,
         keyPoints: {},
     };
 
@@ -32,20 +31,32 @@ class Summary extends Component {
 
     addKeyPointBtnClickHandler = (e) => {
         e.preventDefault();
-        this.setState({showKeyPointForm: true})
+        this.setState(prevState => {
+            const keyPointsCopy = {...prevState.keyPoints};
+            const randomId = uniqid();
+            keyPointsCopy[randomId] = {
+                text: '',
+                showKeyPointForm: true,
+            };
+            return {
+                keyPoints: keyPointsCopy,
+            };
+        })
     };
 
-    handleSubmitKeyPointForm = (e, keyPointText) => {
+    handleSubmitKeyPointForm = (e, keyPointText, id) => {
             e.preventDefault();
-            const randomID = uniqid();
+            if (keyPointText === '') return;
             this.setState(prevState => {
                 const keyPointsCopy = {...prevState.keyPoints};
-                keyPointsCopy[randomID] = keyPointText;
+                keyPointsCopy[id] = {
+                    text: keyPointText,
+                    showKeyPointForm: false,
+                }
                 return {
                     keyPoints: keyPointsCopy,
-                    showKeyPointForm: false,
                 };
-            }, () => console.log(this.state));
+            });
     };
 
     handleClickRemove = (e, id) => {
@@ -59,17 +70,39 @@ class Summary extends Component {
         });
     }
 
-    handleClickEditKeyPoint = (e, id) => {
+    handleClickEditKeyPoint = (e, id, text) => {
         e.preventDefault();
-        //finish later
+        this.setState(prevState => {
+            const copyOfKeyPoints = {...prevState.keyPoints};
+            copyOfKeyPoints[id] = {
+                text: text,
+                showKeyPointForm: true,
+            };
+            return {
+                keyPoints: copyOfKeyPoints,
+            };
+        });
     }
 
         
     
 
     render() {
-        const {headline, hideDisplayShowForm, keyPoints, showKeyPointForm} = this.state;
+        const {headline, hideDisplayShowForm, keyPoints} = this.state;
         const {previewMode} = this.props;
+        const keyPointForms = Object.entries(this.state.keyPoints).map(idKeyPointObjPair => {
+            const [id, keyPointObj] = idKeyPointObjPair;
+            const {showKeyPointForm} = keyPointObj;
+            return (
+            <KeyPointsForm
+                id={id}
+                key={id}
+                previewMode={previewMode}
+                showKeyPointForm={showKeyPointForm}
+                handleSubmitKeyPointForm={this.handleSubmitKeyPointForm}
+                 />
+            );
+        })
         return (
             <div>
                 <TitleBar title='Summary' />
@@ -90,15 +123,14 @@ class Summary extends Component {
                 thingToAdd='Key Point'
                 previewMode={previewMode}
                 clickHandler={this.addKeyPointBtnClickHandler}  />
-                <KeyPointsForm
-                previewMode={previewMode}
-                showKeyPointForm={showKeyPointForm}
-                handleSubmitKeyPointForm={this.handleSubmitKeyPointForm}
-                 />
+
+                {keyPointForms}
+     
                 <KeyPointsDisplay
                 keyPoints={keyPoints}
                 handleClickEdit={this.handleClickEditKeyPoint}
-                handleClickRemove={this.handleClickRemove} />
+                handleClickRemove={this.handleClickRemove}
+                previewMode={previewMode} />
             </div>
         );
     }

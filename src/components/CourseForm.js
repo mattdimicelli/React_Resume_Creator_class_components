@@ -4,8 +4,10 @@ import SubmitBtn from './SubmitBtn'
 
 export class CourseForm extends Component {
     render() {
+        const {previewMode} = this.props;
+        const style = previewMode ? {display: 'none'} : {};
         return (
-            <form className='course-form'>
+            <form style={style} className='course-form'>
                 <input type='text' />
                 <CancelBtn />
                 <SubmitBtn />
