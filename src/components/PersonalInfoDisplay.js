@@ -3,20 +3,26 @@ import EditBtn from './EditBtn'
 
 class PersonalInfoDisplay extends Component {
     render() {
+        const {previewMode, handleBtnClick} = this.props;
+        const {firstName, lastName, address, phone, email, linkedIn,
+        portfolio, hideDisplayShowForm} = this.props.data;
+
+        const style = hideDisplayShowForm ? {display: 'none'} : {};
+
         return (
-            <div>
+            <div style={style}>
                 <div className='personal-info-display'>
-                    <h2>Matt Di Micelli</h2>
-                    <p>40 Woodbury Way, Syosset, NY 11791-2718</p>
+                    <h2>{firstName} {lastName}</h2>
+                    <p>{address}</p>
                     <div className='contact-info'>
-                        <span>516-382-2699</span>
-                        <span>matthewdimicelli@gmail.com</span>
-                        <span>linkedin.com/in/matthewdimicelli</span>
-                        <span>github.com/mattdimicelli</span>
+                        <span>{phone}</span>
+                        <span>{email}</span>
+                        <span>{linkedIn}</span>
+                        <span>{portfolio}</span>
                     </div>
                     <hr />
                 </div>
-                <EditBtn />
+                <EditBtn handleBtnClick={handleBtnClick} previewMode={previewMode} />
             </div>
         )
     }

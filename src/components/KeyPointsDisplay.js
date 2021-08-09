@@ -1,24 +1,20 @@
 import React, { Component } from 'react';
-import EditBtn from './EditBtn';
-import RemoveBtn from './RemoveBtn';
+import KeyPoint from './KeyPoint';
 
 
 class KeyPointsDisplay extends Component {
     render() {
+        const {previewMode, keyPoints, handleClickEdit, 
+        handleClickRemove} = this.props;
+        const keyPointList = Object.entries(keyPoints).map(IDTextPair => {
+            const [id, text] = IDTextPair;
+            return <KeyPoint handleClickEdit={handleClickEdit}
+            handleClickRemove={handleClickRemove}
+             key={id} id={id} text={text} previewMode={previewMode} />
+        })
         return (
             <ul>
-                <li>Blah blah
-                    <EditBtn />
-                    <RemoveBtn />
-                </li>
-                <li>Boo boo
-                <EditBtn />
-                <RemoveBtn />
-                </li>
-                <li>Meshiggles
-                <EditBtn />
-                <RemoveBtn />
-                </li>
+                {keyPointList}
             </ul>
         );
     }

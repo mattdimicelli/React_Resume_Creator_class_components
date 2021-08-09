@@ -4,11 +4,12 @@ import RemoveBtn from './RemoveBtn'
 
 class CourseDisplay extends Component {
     render() {
+        const {preview} = this.props;
         return (
             <li>
                 Java Programming and Data Structures 
-                <EditBtn />
-                <RemoveBtn />
+                <EditBtn preview={preview} />
+                <RemoveBtn preview={preview}/>
             </li>
         )
     }

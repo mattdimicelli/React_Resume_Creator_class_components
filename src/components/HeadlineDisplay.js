@@ -3,12 +3,16 @@ import EditBtn from './EditBtn';
 
 class HeadlineDisplay extends Component {
     render() {
+        const {previewMode, headline, 
+            hideDisplayShowForm, handleClickEdit } = this.props;
+        let style = hideDisplayShowForm ? {display: 'none'} : {};
         return (
-            <div>
+            <div style={style}>
                 <em>
-                    Headline
+                    {headline}
                 </em>
-                <EditBtn />
+                <EditBtn handleBtnClick={handleClickEdit}
+                 previewMode={previewMode} />
             </div>
         )
     }

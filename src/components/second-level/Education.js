@@ -9,7 +9,21 @@ import CourseDisplay from '../CourseDisplay';
 
 class Education extends Component {
     render() {
-        return (
+        const {preview} = this.props;
+
+        return preview ? 
+        (
+            <div>
+                <TitleBar title='Education' />
+                <EducationDisplay preview={preview} />
+                <ul>
+                    <CourseDisplay preview={preview} />
+                </ul>
+                
+
+            </div>    
+        ) :
+        (
             <div>
                 <TitleBar title='Education' />
                 <AddButton thingToAdd='University' />
@@ -23,7 +37,7 @@ class Education extends Component {
                 
 
             </div>    
-        );    
+        )    
         }
 }
 

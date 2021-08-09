@@ -2,15 +2,15 @@ import React, { Component } from 'react'
 import EditBtn from './EditBtn'
 import RemoveBtn from './RemoveBtn'
 
-class EducationDisplay extends Component {
+export default class WorkExperienceDisplay extends Component {
     render() {
         const {preview} = this.props;
         return (
             <div>
-                <h3>State University of New York at Geneseo -- Geneseo, NY</h3>
-                <strong>Bachelor's of Arts in Spanish</strong>
-                <p>2007 - 2011</p>
-                <p>Studied abroad in Cordoba, Argentina.  Text area text</p>
+                <h3>Bethesda Hospital East -- Boynton Beach, FL</h3>
+                <strong>Registered Nurse, Quality Department</strong>
+                <p>2020 - 2020</p>
+                <p>Text area text.  I have no idea wtf I did here.</p>
                 <EditBtn preview={preview} />
                 <RemoveBtn preview={preview} />
             </div>
@@ -18,4 +18,3 @@ class EducationDisplay extends Component {
     }
 }
 
-export default EducationDisplay
