@@ -22,7 +22,7 @@ class PersonalInfoDisplay extends Component {
                     </div>
                     <hr />
                 </div>
-                <EditBtn handleBtnClick={handleBtnClick} previewMode={previewMode} />
+                <EditBtn handleClick={handleBtnClick} previewMode={previewMode} />
             </div>
         )
     }

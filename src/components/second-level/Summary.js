@@ -100,6 +100,7 @@ class Summary extends Component {
                 previewMode={previewMode}
                 showKeyPointForm={showKeyPointForm}
                 handleSubmitKeyPointForm={this.handleSubmitKeyPointForm}
+                handleClickCancel={this.handleClickRemove}
                  />
             );
         })

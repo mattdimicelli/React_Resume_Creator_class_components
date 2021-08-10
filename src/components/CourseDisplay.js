@@ -4,14 +4,29 @@ import RemoveBtn from './RemoveBtn'
 
 class CourseDisplay extends Component {
     render() {
-        const {previewMode} = this.props;
-        return (
-            <li>
-                Java Programming and Data Structures 
-                <EditBtn previewMode={previewMode} />
-                <RemoveBtn previewMode={previewMode}/>
-            </li>
-        )
+        const {previewMode, title, id, hideEditAndRemoveBtns,
+        handleClickRemove, handleClickEditCourse} = this.props;
+
+        if (title) {
+            return (
+                <li>
+                    {title}
+
+                    <EditBtn
+                    previewMode={previewMode}
+                    handleClick={handleClickEditCourse}
+                    hideEditAndRemoveBtns={hideEditAndRemoveBtns}
+                    id={id} />
+
+                    <RemoveBtn
+                    previewMode={previewMode}
+                    hideEditAndRemoveBtns={hideEditAndRemoveBtns}
+                    id={id}
+                    handleClick={handleClickRemove}
+                    />
+                </li>
+            )
+    } else {return null;}
     }
 }
 

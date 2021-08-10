@@ -11,7 +11,7 @@ class HeadlineDisplay extends Component {
                 <em>
                     {headline}
                 </em>
-                <EditBtn handleBtnClick={handleClickEdit}
+                <EditBtn handleClick={handleClickEdit}
                  previewMode={previewMode} />
             </div>
         )

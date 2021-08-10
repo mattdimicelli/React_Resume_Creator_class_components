@@ -4,15 +4,27 @@ import RemoveBtn from './RemoveBtn'
 
 class EducationDisplay extends Component {
     render() {
-        const {previewMode} = this.props;
+        const {universityName, city, degree,
+        from, to, furtherAchievements} = this.props.info;
+        const {previewMode, id, handleClickRemove,
+             hideEditAndRemoveBtns, 
+             handleClickEditUniversity} = this.props;
         return (
             <div>
-                <h3>State University of New York at Geneseo -- Geneseo, NY</h3>
-                <strong>Bachelor's of Arts in Spanish</strong>
-                <p>2007 - 2011</p>
-                <p>Studied abroad in Cordoba, Argentina.  Text area text</p>
-                <EditBtn previewMode={previewMode} />
-                <RemoveBtn previewMode={previewMode} />
+                <h3>{universityName} {universityName && city ? "--" : ''} {city}</h3>
+                <strong>{degree}</strong>
+                <p>{from} {from && to ? '-' : ''} {to}</p>
+                <p>{furtherAchievements}</p>
+                <EditBtn
+                hideEditAndRemoveBtns ={hideEditAndRemoveBtns}
+                previewMode={previewMode}
+                id={id}
+                handleClick={handleClickEditUniversity} />
+                <RemoveBtn
+                hideEditAndRemoveBtns ={hideEditAndRemoveBtns}
+                previewMode={previewMode}
+                handleClick={handleClickRemove}
+                id={id} />
             </div>
         )
     }

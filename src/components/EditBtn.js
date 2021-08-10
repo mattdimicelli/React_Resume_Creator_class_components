@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 
 class EditBtn extends Component {
     render() {
-        const {handleClick, previewMode} = this.props;
-        const style = previewMode ? {display: 'none'} : null;
+        const {handleClick, previewMode, hideEditAndRemoveBtns, id} = this.props;
+        let style = previewMode ? {display: 'none'} : null;
+        if (hideEditAndRemoveBtns) style = {display: 'none'};
         return (
-            <button style={style} className='edit-btn' onClick={handleClick}>
+            <button id={id} style={style} className='edit-btn' onClick={handleClick}>
                 Edit
             </button>
         )

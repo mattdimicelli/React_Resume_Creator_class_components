@@ -2,8 +2,14 @@ import React, { Component } from 'react'
 
 class TextArea extends Component {
     render() {
+        const {handleChange, id, value, name} = this.props;
         return (
-            <textarea placeholder={this.props.placeholder}>
+            <textarea
+            value={value}
+            placeholder={this.props.placeholder}
+            onChange={(e) => handleChange(e, id)}
+            name={name}
+            >
                 
             </textarea>
         )

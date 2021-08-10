@@ -1,18 +1,27 @@
 import React, { Component } from 'react'
-import CancelBtn from './CancelBtn'
 import SubmitBtn from './SubmitBtn'
+import TextInput from './TextInput';
 
 export class CourseForm extends Component {
     render() {
-        const {previewMode} = this.props;
-        const style = previewMode ? {display: 'none'} : {};
+        const { previewMode, id, title, showCourseForm,
+            handleChange, handleSubmit } = this.props;
+        let style =  showCourseForm ?  {} : {display: 'none'}; 
+        if (previewMode) style = {display: 'none'};
+        
         return (
-            <form style={style} className='course-form'>
-                <input type='text' />
-                <CancelBtn />
+            <form
+            onSubmit={handleSubmit}
+            style={style}
+            id={id}
+            className='course-form'>
+                <TextInput
+                 handleChange={handleChange}
+                 value={title}
+                 id={id} />
                 <SubmitBtn />
             </form>
-            );
+        );
     }
 }
 

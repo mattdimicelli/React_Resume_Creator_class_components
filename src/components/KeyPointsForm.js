@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SubmitBtn from './SubmitBtn';
 import TextInput from './TextInput';
+import CancelBtn from './CancelBtn';
 
 
 class KeyPointsForm extends Component {
@@ -16,7 +17,8 @@ class KeyPointsForm extends Component {
     }
 
     render() {
-        const {handleSubmitKeyPointForm, previewMode, showKeyPointForm, id} = this.props;
+        const {handleSubmitKeyPointForm, previewMode, showKeyPointForm,
+             id, handleClickCancel} = this.props;
         const {keyPointText} = this.state;
         const style = showKeyPointForm ? {} : {display: 'none'};
         return (
@@ -27,6 +29,7 @@ class KeyPointsForm extends Component {
                  previewMode={previewMode}
                  handleChange={this.handleChange}
                   />
+                <CancelBtn handleClickCancel={(e) => handleClickCancel(e, id)} />
                 <SubmitBtn
                  previewMode={previewMode}  />
             </form>

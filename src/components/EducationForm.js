@@ -1,23 +1,63 @@
 import React, { Component } from 'react'
 import TextInput from './TextInput';
 import TextArea from './TextArea';
-import CancelBtn from './CancelBtn';
 import SubmitBtn from './SubmitBtn';
 
 class EducationForm extends Component {
     
     render() {
-        const {previewMode} = this.props;
-        const style = previewMode ? {display: 'none'} : {};
+        const {previewMode, showEducationForm, id, handleChange, 
+        handleSubmit} = this.props;
+        const {universityName, city, from, to, degree,
+             furtherAchievements, } = this.props.info;
+        let style = {};
+        if (!showEducationForm) style = {display: 'none'};
+        if (previewMode) style = {display: 'none'};
+        
         return (
-            <form style={style}>
-                <TextInput placeholder="University or School Name" />
-                <TextInput placeholder="City" />
-                <TextInput placeholder="From" />
-                <TextInput placeholder="To" />
-                <TextInput placeholder="Degree" />
-                <TextArea placeholder="Further Descriptions or Achievements" />
-                <CancelBtn />
+            <form style={style} onSubmit={handleSubmit} id={id}>
+                <TextInput 
+                id={id}
+                handleChange={handleChange}
+                value={universityName}
+                placeholder="University or School Name"
+                name='universityName' />
+                
+                <TextInput
+                id={id}
+                handleChange={handleChange}
+                value={city}
+                placeholder="City"
+                name='city' />
+                
+                <TextInput
+                id={id}
+                handleChange={handleChange}
+                value={from}
+                placeholder="From"
+                name='from' />
+                
+                <TextInput
+                id={id}
+                handleChange={handleChange}
+                value={to}
+                placeholder="To"
+                name='to' />
+                
+                <TextInput
+                id={id}
+                handleChange={handleChange}
+                value={degree}
+                placeholder="Degree"
+                name='degree' />
+                
+                <TextArea
+                id={id}
+                handleChange={handleChange}
+                value={furtherAchievements}
+                placeholder="Further Descriptions or Achievements"
+                name='furtherAchievements' />
+
                 <SubmitBtn />
             </form>
         )

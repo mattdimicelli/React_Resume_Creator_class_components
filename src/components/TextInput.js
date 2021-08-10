@@ -4,7 +4,7 @@ export default class TextInput extends React.Component {
 
     render() {
         const {handleChange, name, placeholder,
-            previewMode, value} = this.props;
+            previewMode, value, id} = this.props;
 
         const style = previewMode ? {display: 'none'} : {};
         return(
@@ -12,7 +12,7 @@ export default class TextInput extends React.Component {
              style={style}
              value={value}
             name={name}
-            onChange={handleChange}
+            onChange={id !== undefined ? (e) => handleChange(e, id) : handleChange}
             type="text"
             placeholder={placeholder}
             className='text-input'
