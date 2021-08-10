@@ -1,24 +1,70 @@
 import React, { Component } from 'react';
 import TextInput from './TextInput';
 import TextArea from './TextArea';
-import CancelBtn from './CancelBtn';
 import SubmitBtn from './SubmitBtn';
 
 
 
 class WorkExperienceForm extends Component {
+
     render() {
+        const {previewMode, showWorkExperienceForm, id, handleChange, 
+            handleSubmit} = this.props;
+            const {companyName, city, from, to, role,
+                 furtherAchievements, } = this.props.info;
+            let style = {};
+            if (!showWorkExperienceForm) style = {display: 'none'};
+            if (previewMode) style = {display: 'none'};
+
         return (
-            <div>
-                <TextInput placeholder="Company Name" />
-                <TextInput placeholder="City" />
-                <TextInput placeholder="From" />
-                <TextInput placeholder="To" />
-                <TextInput placeholder="Role" />
-                <TextArea placeholder="Further Descriptions or Achievements" />
-                <CancelBtn />
+            <form style={style} onSubmit={handleSubmit} id={id}>
+
+                <TextInput
+                placeholder="Company Name"
+                id={id}
+                handleChange={handleChange}
+                value={companyName}
+                name='companyName' />
+
+                <TextInput
+                id={id}
+                handleChange={handleChange}
+                value={city}
+                placeholder="City"
+                name='city' 
+                 />
+
+                <TextInput 
+                id={id}
+                handleChange={handleChange}
+                value={from}
+                placeholder="From"
+                name='from' />
+
+                <TextInput 
+                id={id}
+                handleChange={handleChange}
+                value={to}
+                placeholder="To"
+                name='to' />
+
+                <TextInput 
+                id={id}
+                handleChange={handleChange}
+                value={role}
+                placeholder="Role"
+                name='role' />
+
+
+                <TextArea 
+                id={id}
+                handleChange={handleChange}
+                value={furtherAchievements}
+                placeholder="Further Descriptions or Achievements"
+                name='furtherAchievements' />
+
                 <SubmitBtn />
-            </div>
+            </form>
         )
     }
 }
