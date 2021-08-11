@@ -8,7 +8,7 @@ class HeadlineForm extends Component {
              handleSubmit, hideDisplayShowForm } = this.props;
         let style = hideDisplayShowForm ? {} : {display: 'none'};
         return (
-            <form style={style} onSubmit={handleSubmit}>
+            <form class='headline-form' style={style} onSubmit={handleSubmit}>
                 <TextInput value={headline} 
                 previewMode={previewMode}
                 placeholder='Headline'

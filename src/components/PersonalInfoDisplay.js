@@ -15,9 +15,9 @@ class PersonalInfoDisplay extends Component {
                     <h2>{firstName} {lastName}</h2>
                     <p>{address}</p>
                     <div className='contact-info'>
-                        <span>{phone}</span>
-                        <span>{email}</span>
-                        <span>{linkedIn}</span>
+                        <span className='phone'>{phone}</span>
+                        <span className='email'>{email}</span>
+                        <span className='linked-in'>{linkedIn}</span>
                         <span>{portfolio}</span>
                     </div>
                     <hr />

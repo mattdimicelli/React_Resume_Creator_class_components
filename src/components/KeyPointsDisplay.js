@@ -14,7 +14,7 @@ class KeyPointsDisplay extends Component {
              key={id} id={id} text={text} previewMode={previewMode} />
         })
         return (
-            <ul>
+            <ul className='key-points-displays'>
                 {keyPointList}
             </ul>
         );

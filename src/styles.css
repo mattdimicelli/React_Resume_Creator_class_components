@@ -1,12 +1,52 @@
 .page {
     width: 80%;
+    aspect-ratio: 8.5 / 11;
     border: 2px solid black;
 }
 
-.app {
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-block-end: 0.5rem;
+}
+
+.kp-input-and-btn-container{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.add-kp-btn-container, .key-point-form, .education-btns-container, 
+.key-points-display {
+    width: 80%;
+    margin: 0 auto;
+}
+
+p {
+    margin-block-start: 0.5rem;
+    margin-block-end: 0.5rem;
+}
+
+li {
+    margin-block-end: 0.5rem;
+}
+
+.app, .headline-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.personal-info-form, .headline-form, .education-form,
+.course-form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
 }
 
 .text-input {
@@ -18,6 +58,24 @@
     display: flex;
     justify-content: center;
     background-color: lightgrey ;
+    font-weight: bold;
+    font-size: 1.5rem;
+    width: 80%;
+    margin: 0 auto;
+    margin-block-end: 1rem;
+}
+
+.phone, .email, .linked-in {
+    margin-right: 1rem;
+}
+
+.add-btn {
+    margin-left: 0;
+}
+
+button {
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
 }
 
 .personal-info-display {
@@ -26,8 +84,13 @@
     align-items: center;
 }
 
+textarea {
+    resize: none;
+    width: 80%;
+}
+
 .contact-info {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
 }

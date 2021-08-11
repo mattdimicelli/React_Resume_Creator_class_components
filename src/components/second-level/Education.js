@@ -237,17 +237,17 @@ class Education extends Component {
         return (
             <div>
                 <TitleBar title='Education' />
+                <div className='education-btns-container'>
+                    <AddButton 
+                    clickHandler={this.addUniversityHandler}
+                    thingToAdd='University'
+                     previewMode={previewMode} />
 
-                <AddButton 
-                clickHandler={this.addUniversityHandler}
-                thingToAdd='University'
-                 previewMode={previewMode} />
-
-                <AddButton
-                thingToAdd="Course"
-                previewMode={previewMode}
-                clickHandler={this.addCourseHandler} />
-
+                 <AddButton
+                    thingToAdd="Course"
+                    previewMode={previewMode}
+                    clickHandler={this.addCourseHandler} />
+                </div>
                 {educationForms}
 
                 {courseForms}

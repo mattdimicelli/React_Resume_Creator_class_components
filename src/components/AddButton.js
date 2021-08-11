@@ -5,8 +5,9 @@ class AddButton extends Component {
     render() {
         const {clickHandler, thingToAdd, previewMode} = this.props;
         const style = previewMode ? {display: 'none'} : null;
+        const theClassName = thingToAdd === 'Course' ? 'add-course-btn' : 'add-btn';
         return (
-            <button onClick={clickHandler} style={style}>
+            <button className={theClassName} onClick={clickHandler} style={style}>
                 + {thingToAdd}
             </button>
         )

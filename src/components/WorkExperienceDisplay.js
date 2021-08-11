@@ -14,7 +14,7 @@ export default class WorkExperienceDisplay extends Component {
 
         return (
             <div>
-                <h3>{companyName} {companyName && city ? '--' : ''} {city}</h3>
+                <h3>{companyName.toUpperCase()} {companyName && city ? '--' : ''} {city}</h3>
                 <strong>{role}</strong>
                 <p>{from} {from && to ? '-' : ''} {to}</p>
                 <p>{furtherAchievements}</p>
@@ -31,7 +31,7 @@ export default class WorkExperienceDisplay extends Component {
                 previewMode={previewMode}
                 handleClick={handleClickRemove}
                 id={id} />
-                
+
             </div>
         )
     }

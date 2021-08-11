@@ -15,7 +15,7 @@ class PersonalInfoForm extends Component {
         if (previewMode) style = {display: 'none'};
 
         return (
-            <form name='form' style={style} onSubmit={handleSubmit}>
+            <form className='personal-info-form' name='form' style={style} onSubmit={handleSubmit}>
                 <TextInput name='firstName' handleChange={handleChange} value={firstName} placeholder='First Name' />
                 <TextInput name='lastName' handleChange={handleChange} value={lastName} placeholder='Last Name' />
                 <TextInput name='address' handleChange={handleChange} value={address} placeholder='Address' />

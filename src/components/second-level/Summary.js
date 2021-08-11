@@ -120,11 +120,13 @@ class Summary extends Component {
                 hideDisplayShowForm={hideDisplayShowForm}
                 handleClickEdit={this.handleClickEdit}
                  />
-                <AddButton
-                thingToAdd='Key Point'
-                previewMode={previewMode}
-                clickHandler={this.addKeyPointBtnClickHandler}  />
-
+                <div className='add-kp-btn-container'>
+                    <AddButton
+                    thingToAdd='Key Point'
+                    previewMode={previewMode}
+                    clickHandler={this.addKeyPointBtnClickHandler}  />
+                </div>
+                
                 {keyPointForms}
      
                 <KeyPointsDisplay

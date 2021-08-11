@@ -15,7 +15,7 @@ class EducationForm extends Component {
         if (previewMode) style = {display: 'none'};
         
         return (
-            <form style={style} onSubmit={handleSubmit} id={id}>
+            <form className='education-form' style={style} onSubmit={handleSubmit} id={id}>
                 <TextInput 
                 id={id}
                 handleChange={handleChange}

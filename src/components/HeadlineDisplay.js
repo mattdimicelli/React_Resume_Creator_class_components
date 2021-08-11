@@ -7,12 +7,14 @@ class HeadlineDisplay extends Component {
             hideDisplayShowForm, handleClickEdit } = this.props;
         let style = hideDisplayShowForm ? {display: 'none'} : {};
         return (
-            <div style={style}>
+            <div className='headline-display' style={style}>
                 <em>
                     {headline}
                 </em>
-                <EditBtn handleClick={handleClickEdit}
-                 previewMode={previewMode} />
+                <div className='headline-edit-btn-container'>
+                    <EditBtn handleClick={handleClickEdit}
+                    previewMode={previewMode} />
+                </div>
             </div>
         )
     }
