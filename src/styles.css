@@ -2,10 +2,12 @@
     width: 80%;
     aspect-ratio: 8.5 / 11;
     border: 2px solid black;
+    background-color: white;
 }
 
 body {
     font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(136, 135, 135);
 }
 
 h2 {
@@ -20,9 +22,29 @@ h2 {
 }
 
 .add-kp-btn-container, .key-point-form, .education-btns-container, 
-.key-points-display {
-    width: 80%;
+.key-points-display, .personal-info-edit-btn-container, 
+.education-display, .add-work-experience-btn-container,
+.work-experience-display {
+    width: 85%;
     margin: 0 auto;
+}
+
+.education-display {
+    margin-bottom: 1.5rem;
+}
+
+.button-wrapper {
+    margin-bottom: 1rem;
+}
+
+.education-btns-container,
+.add-work-experience-btn-container {
+    margin-bottom: 0.5rem;
+
+}
+
+.add-kp-btn-container {
+    margin-bottom: 0.5rem;
 }
 
 p {
@@ -34,6 +56,9 @@ li {
     margin-block-end: 0.5rem;
 }
 
+.edit-btn {
+    margin-left: 0;
+}
 .app, .headline-display {
     display: flex;
     flex-direction: column;
@@ -41,8 +66,8 @@ li {
 }
 
 .personal-info-form, .headline-form, .education-form,
-.course-form {
-    width: 80%;
+.course-form, .work-experience-form {
+    width: 85%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,7 +75,7 @@ li {
 }
 
 .text-input {
-    width: 80%;
+    width: 85%;
     display: block;
 }
 
@@ -60,7 +85,7 @@ li {
     background-color: lightgrey ;
     font-weight: bold;
     font-size: 1.5rem;
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
     margin-block-end: 1rem;
 }
@@ -76,6 +101,7 @@ li {
 button {
     margin-bottom: 0.5rem;
     margin-left: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .personal-info-display {
@@ -86,11 +112,31 @@ button {
 
 textarea {
     resize: none;
-    width: 80%;
+    width: 85%;
 }
 
 .contact-info {
     display: flex;
     justify-content: center;
     width: 100%;
+}
+
+.personal-info-edit-btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+.personal-info-form {
+    margin-top: 1rem;
+}
+
+.key-points-display,
+.course-displays,
+.course-label {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.course-label {
+    margin-bottom: 0.5rem;
 }

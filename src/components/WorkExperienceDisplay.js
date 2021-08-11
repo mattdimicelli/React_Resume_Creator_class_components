@@ -13,10 +13,9 @@ export default class WorkExperienceDisplay extends Component {
          = this.props;
 
         return (
-            <div>
-                <h3>{companyName.toUpperCase()} {companyName && city ? '--' : ''} {city}</h3>
-                <strong>{role}</strong>
-                <p>{from} {from && to ? '-' : ''} {to}</p>
+            <div className='work-experience-display'>
+                <p>{companyName.toUpperCase()} {companyName && city ? '--' : ''} {city}</p>
+                <p><strong>{role}{role ? ',' : ''} &nbsp;</strong>{from} {from && to ? '-' : ''} {to}</p>
                 <p>{furtherAchievements}</p>
 
                 <EditBtn

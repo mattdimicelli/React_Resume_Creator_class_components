@@ -17,7 +17,7 @@ class WorkExperienceForm extends Component {
             if (previewMode) style = {display: 'none'};
 
         return (
-            <form style={style} onSubmit={handleSubmit} id={id}>
+            <form className='work-experience-form' style={style} onSubmit={handleSubmit} id={id}>
 
                 <TextInput
                 placeholder="Company Name"

@@ -10,10 +10,9 @@ class EducationDisplay extends Component {
              hideEditAndRemoveBtns, 
              handleClickEditUniversity} = this.props;
         return (
-            <div>
-                <h3>{universityName.toUpperCase()} {universityName && city ? "--" : ''} {city}</h3>
-                <strong>{degree}</strong>
-                <p>{from} {from && to ? '-' : ''} {to}</p>
+            <div className='education-display'>
+                <p>{universityName.toUpperCase()} {universityName && city ? "--" : ''} {city}</p>
+                <p><strong>{degree}{degree ? ',' : ''} &nbsp;</strong>{from} {from && to ? '-' : ''} {to}</p>
                 <p>{furtherAchievements}</p>
                 <EditBtn
                 hideEditAndRemoveBtns ={hideEditAndRemoveBtns}

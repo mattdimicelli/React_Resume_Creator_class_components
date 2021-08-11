@@ -10,16 +10,18 @@ class KeyPoint extends Component {
         return (
             <li>
                  {text}
-                <EditBtn
-                handleClick={(e) => handleClickEdit(e, id, text)}
-                 previewMode={previewMode}
-                  />
+                <div className='kp-bnts'>
+                    <EditBtn
+                    handleClick={(e) => handleClickEdit(e, id, text)}
+                     previewMode={previewMode}
+                      />
 
-                <RemoveBtn
-                    id={id}
-                 handleClick={handleClickRemove}
-                  previewMode={previewMode}
-                   />
+                    <RemoveBtn
+                        id={id}
+                     handleClick={handleClickRemove}
+                      previewMode={previewMode}
+                       />
+                </div>
             </li>
         )
     }

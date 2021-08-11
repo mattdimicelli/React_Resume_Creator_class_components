@@ -18,9 +18,11 @@ export default class App extends React.Component {
   render() {
     return (
     <div className='app'>
-      <h1>RESUME CREATOR</h1>
-      <button name='edit' onClick={this.handleBtnClick}>Edit</button>
-      <button name='preview' onClick={this.handleBtnClick}>Preview</button>
+      <h1>RÉSUMÉ CREATOR</h1>
+      <div className='button-wrapper'>
+        <button name='edit' onClick={this.handleBtnClick}>Edit Résumé</button>
+        <button name='preview' onClick={this.handleBtnClick}>Preview Résumé</button>
+      </div>
 
       <Page previewMode={this.state.previewMode} />
     </div>

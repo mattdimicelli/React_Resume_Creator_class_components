@@ -130,11 +130,13 @@ class WorkExperience extends Component {
         return (
             <div>
                 <TitleBar title='Work Experience' />
-
-                <AddButton
-                clickHandler={this.addWorkExperienceHandler}
-                thingToAdd='Work Experience'
-                previewMode={previewMode} />
+                
+                <div className='add-work-experience-btn-container'>
+                    <AddButton
+                    clickHandler={this.addWorkExperienceHandler}
+                    thingToAdd='Work Experience'
+                    previewMode={previewMode} />
+                </div>
 
                 {workExperienceForms}
 

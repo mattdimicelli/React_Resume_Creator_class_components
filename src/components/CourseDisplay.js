@@ -11,19 +11,20 @@ class CourseDisplay extends Component {
             return (
                 <li>
                     {title}
+                    <div>
+                        <EditBtn
+                        previewMode={previewMode}
+                        handleClick={handleClickEditCourse}
+                        hideEditAndRemoveBtns={hideEditAndRemoveBtns}
+                        id={id} />
 
-                    <EditBtn
-                    previewMode={previewMode}
-                    handleClick={handleClickEditCourse}
-                    hideEditAndRemoveBtns={hideEditAndRemoveBtns}
-                    id={id} />
-
-                    <RemoveBtn
-                    previewMode={previewMode}
-                    hideEditAndRemoveBtns={hideEditAndRemoveBtns}
-                    id={id}
-                    handleClick={handleClickRemove}
-                    />
+                        <RemoveBtn
+                        previewMode={previewMode}
+                        hideEditAndRemoveBtns={hideEditAndRemoveBtns}
+                        id={id}
+                        handleClick={handleClickRemove}
+                        />
+                    </div>
                 </li>
             )
     } else {return null;}

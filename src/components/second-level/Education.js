@@ -254,7 +254,9 @@ class Education extends Component {
 
                 {educationDisplays}
 
-                <ul>
+                <p className='course-label'>{courseForms.length > 0 ? 'Additional Courses and Preparation:' : ''}</p>
+                
+                <ul className='course-displays'>
                     {courseDisplays}
                 </ul>
                 
