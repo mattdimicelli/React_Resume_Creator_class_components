@@ -140,3 +140,7 @@ textarea {
 .course-label {
     margin-bottom: 0.5rem;
 }
+
+.key-points-displays {
+	list-style-position: inside;
+}

@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# Readme
+# React Resume Creator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+My first ever React project.  A resume creator that shows you the appearance 
+of the resume as formatted to be printed while you are editting it.
 
-In the project directory, you can run:
+### Challenge
 
-### `yarn start`
+The full requirements for the project from the Odin Project curriculum can be seen [here](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/cv-application).  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Screenshot
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<p align="center">
+  <img src="./screenshot_for_readme.png" alt="screenshot of tic tac toe app" width="65%" height="65%">
+</p>
 
-### `yarn test`
+### Links
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Live site](https://mattdimicelli.github.io/cv-project/)
+- [Repo](https://github.com/mattdimicelli/cv-project)
 
-### `yarn build`
+## My process
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Built with
+- React, with JS classes for stateful components
+- JSX
+- create-react-app
+- Uniqid library to create unique IDs for list rendering
+- CSS
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### What I learned
 
-### `yarn eject`
+Since this was my first React project, I obviously learned a lot just to be 
+able to pull this off.  First of all, the basics about React itself: it is
+a library (not a framework) for building UI components.  It is declarative,
+which means that you tell it what you want (as opposed to how to do it step-by-step
+), and React builds it.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+JSX, which stands for JS XML, is not the same thing as HTML, even though the
+terms are often used interchangeably in the React context.  JSX elements are
+syntactic sugar for React.createElement()... which certaintly isn't as elegant.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I learned that both class components and functional components can be stateful,
+but only class components can do so without using Hooks.  Although foregoing
+the class components in favor of functional components is now the preferred method,
+I built this app using class components because much code in the wild still uses
+class components, so I have to know how to use them.  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+I then learned the process of "thinking in React".  Step #1 is to break the UI
+down into a component heiarchy.  The heiarchy is important because data should flow
+in one direction in React.  Step #2 involves building a static-only version
+of the site in React.  So only props, no state.  The only lifecycle methods that
+the components will have at this point are the render() methods.  You can start 
+building from the bottom-up, or vice-versa.  Starting at the bottom-up is better
+for large, complex projects, while starting at the top is easier for simpler 
+projects.  I chose to start at the top since this project is relatively simple.  
+By the end of this step, you have reusable components that render your data model.
+Step #3: Identify the minimal (keep as DRY as possible) representation of UI state
+for your application.  You have to consider all the pieces of data, and ask yourself
+three questions about each one: 
+    1.  Is in passed in from a parent via a prop?  If so, it probably isn't state.
+    2.  Does it remain unchanged over time?  If so, it probably isn't state.
+    3.  Can you compute it from any other state or props?  If so, it isn't state.
+Step #4: Decide which component should store the state.  The state must be 
+stored in a component that is higher up in the heiarchy than all other components
+that render based off the state.  But if there is no already-existing component
+where it would *make sense* to store the state, you can create a new component just
+for that... as long as it's above all of the components that will render based 
+off changes in the state.
+Step #5: Add inverse data flow.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This description of what I learned is getting long... I hope that it is apparent
+that building this was a *huge* learning experience, and hopefully the code 
+and your knowledge that this was my first React project conveys how much I learned. 
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
