@@ -18,8 +18,8 @@ The full requirements for the project from the Odin Project curriculum can be se
 
 ### Links
 
-- [Live site](https://mattdimicelli.github.io/cv-project/)
-- [Repo](https://github.com/mattdimicelli/cv-project)
+- [Live site](https://mattdimicelli.github.io/React_Resume_Creator_class_components/)
+- [Repo](https://github.com/mattdimicelli/React_Resume_Creator_class_components)
 
 ## My process
 
